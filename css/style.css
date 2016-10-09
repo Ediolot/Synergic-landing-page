@@ -18,6 +18,28 @@ html, body {
 
 /*********************************/
 
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/Lato.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Josefin Slab";
+    src: url("../fonts/JosefinSlab.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Coming Soon";
+    src: url("../fonts/ComingSoon.ttf") format('truetype');
+}
+
+/*********************************/
+
 .header-color {
     background: #59A3FC;
     color: #FFFFFF;
