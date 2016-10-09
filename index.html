@@ -131,36 +131,39 @@
                 <div class="sing-up-form-row">
                     <!-- NAME -->
                     <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="text" id="name-text">
-                        <label class="mdl-textfield__label sing-up-textfield-label color" for="name-text">Name</label>
+                        <input name="FullName" class="mdl-textfield__input color" type="text" id="name-text">
+                        <label class="mdl-textfield__label sing-up-textfield-label color" for="name-text">Full name</label>
+                        <span id="name-error" class="mdl-textfield__error">Invalid name (Ex. "Michael Joseph Jackson")</span>
                     </div>
 
                     <!-- EMAIL -->
                     <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="text" id="email-text">
+                        <input name="Email" class="mdl-textfield__input color" type="text" id="email-text">
                         <label class="mdl-textfield__label sing-up-textfield-label" for="email-text">Email</label>
+                        <span id="email-error" class="mdl-textfield__error">Invalid email!</span>
                     </div>
                 </div>
 
                 <div class="sing-up-form-row">
                     <!-- PASSWORD -->
                     <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="password" id="pass-text">
+                        <input name="Password" class="mdl-textfield__input color" type="password" id="pass-text">
                         <label class="mdl-textfield__label sing-up-textfield-label" for="pass-text">Password</label>
+                        <span id="pass-error" class="mdl-textfield__error">Password must have between 6 and 18 characters!</span>
                     </div>
 
                     <!-- CONFIRM PASSWORD -->
                     <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input color" type="password" id="confirm-pass-text">
                         <label class="mdl-textfield__label sing-up-textfield-label" for="confirm-pass-text">Confirm password</label>
+                        <span id="confirm-pass-error" class="mdl-textfield__error">Password dont match!</span>
                     </div>
                 </div>
-
                 <div class="sing-up-form-row">
 
                     <div class="mdl-textfield sing-up-textfield mdl-js-textfield">
-                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-                        <label class="mdl-textfield__label sing-up-textfield-label" for="sample5">Tell us about you ! ... </label>
+                        <textarea name="About" class="mdl-textfield__input" type="text" rows= "3" id="more-text" ></textarea>
+                        <label class="mdl-textfield__label sing-up-textfield-label" for="more-text">Tell us about you ! ... </label>
                     </div>
 
                     <div class="sing-up-radio-wrapper">
