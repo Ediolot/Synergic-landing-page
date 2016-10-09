@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- TODO Metatags Añadir iconos redes sociales-->
+        <!-- TODO
+        Metatags
+        Añadir iconos redes sociales
+        Mostrar barra scroll
+        -->
         <meta charset="utf-8">
-        <title>NOMBRE</title>
+        <title>Synergic</title>
 
         <!-- STYLES -->
         <!-- MDL STYLES -->
         <link rel="stylesheet" href="css/MDL/icon.css">
         <link rel="stylesheet" href="css/MDL/material.indigo-pink.min.css">
-        <!-- GITGRAPH STYLES -->
-        <link rel="stylesheet" type="text/css" href="css/GG/gitgraph.css" />
         <!-- MY STYLES -->
         <link rel="stylesheet" href="css/style.css">
 
         <!-- SCRIPTS -->
         <!-- MDL SCRIPTS -->
         <script defer src="js/MDL/material.min.js"></script>
-        <!-- GITGRAPH SCRIPTS -->
-        <script src="js/GG/gitgraph.js"></script>
         <!-- MY SCRIPTS -->
         <script src="js/app.js"></script>
 
@@ -29,8 +29,10 @@
 
         </header>
 
+        <!-- TITLE -->
         <section id="title" class="main-section">
             <h1>Synergic</h1>
+            <!-- PAPER PLANE -->
             <svg id="paper-plane" width="95" height="50">
                 <g transform="scale(5,5)">
                     <path d = "M 3 2 L 19 2 L 3  8 L 3 2" fill="#ddd"/>
@@ -41,19 +43,61 @@
             </svg>
         </section>
 
+        <!-- INFORMATION -->
         <section id="information" class="main-section">
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--6-col">
 
+            <!-- INFORMATION TEXT -->
+            <div id="information-text">
+
+                <div class="wrapper">
+                    <div id="inner-text">
+                        <span>Why use synergic ?<span>
+                        <p>Synergic is a great tool for to maintaining your projects syncronized
+                        helping your team end the task faster and easily without possible problems
+                        of deficient communication, missed information or close dead lines.</p>
+                        <span>Who can use synergic ?<span>
+                        <p>Synergic can be used by anyone who is willing to enlist into a new project.
+                        Scholars, students, teachers, workers, everyone can use it. Synergic is completely
+                        free and open source, so there is no excuse to start now ! </p>
+                    </div>
                 </div>
-                <div class="mdl-cell mdl-cell--2-col">
-                    <div class="line"></div>
+
+            </div>
+
+            <!-- LINE SEPARATOR -->
+            <div id="line-container" class="information-box"><div class="line"></div></div>
+
+            <!-- BUTTONS -->
+            <div id="information-buttons" class="information-box" >
+
+                <div class="wrapper">
+                    <div class="img-box" id="tools-image"><img  src="images/tools.svg"></img><span>Build</span></div>
+                    <div class="img-box" id="flask-image"><img src="images/flask.svg"></img><span>Test</span></div>
+                    <div class="img-box" id="analytics-image"><img src="images/analytics.svg"></img><span>Deploy</span></div>
                 </div>
-                <div class="mdl-cell mdl-cell--4-col">TEXT2</div>
+                <div class="buttons-wrapper">
+                    <!-- Entrar -->
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button">Sing in</button>
+                    <!-- Registrarse -->
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button" onclick="goToSingUp()">Sign up</button>
+                </div>
+
             </div>
         </section>
 
-        <section id="sign-in" class="main-section"></section>
+        <!-- SIGN UP -->
+        <section id="sing-up" class="main-section">
+
+            <form id="sing-up-form" action="pagina2.html" method="GET">
+
+                <!-- NAME -->
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input color" type="text" id="nametextfield">
+                    <label class="mdl-textfield__label color" for="nametextfield">Name</label>
+                </div>
+            </form>
+
+        </section>
 
         <section id="more-info" class="main-section"></section>
 

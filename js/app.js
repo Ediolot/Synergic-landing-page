@@ -1,19 +1,10 @@
 
-var paperPlane = {
-    id:       "paper-plane",
-    error_x:   2.1,
-    speed_x:   2,
-    target_x:  undefined,
-    x:         undefined,
-    width:     undefined,
-    element:   undefined
-};
-
 window.onload = function ()
 {
     movePaperPlane();
 
     document.addEventListener("scroll", movePaperPlane);
+    window.addEventListener("resize", movePaperPlane);
 }
 
 function movePaperPlane()
@@ -31,4 +22,18 @@ function movePaperPlane()
     plane.style.transform = "translate("+x+"px,0)";
 }
 
-// TODO on resize movePaperPlane
+function goToSingUp()
+{
+    var top = document.getElementById("sing-up").getBoundingClientRect().top;
+    movePaperPlane();
+
+    if (top!=0)
+    {
+        document.body.scrollTop += Math.abs(top/35)<1 ? 1 : top/35;
+        setTimeout(goToSingUp, 10);
+    }
+    else
+    {
+         window.location.hash = "sing-up";
+    }
+}
