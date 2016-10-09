@@ -5,6 +5,7 @@ window.onload = function ()
 
     document.addEventListener("scroll", movePaperPlane);
     window.addEventListener("resize", movePaperPlane);
+    document.getElementById("create-acc").addEventListener("click", submitInformation);
 }
 
 function movePaperPlane()
@@ -24,16 +25,29 @@ function movePaperPlane()
 
 function goToSingUp()
 {
+    // TODO speed up this
+    document.getElementById("sing-up-img").classList.add("hidden");
+    document.getElementById("sing-up-form").classList.remove("hidden");
+    document.getElementById("create-acc").classList.remove("hidden");
+
+    document.getElementById("sing-up").style.display = "inline-block";
     var top = document.getElementById("sing-up").getBoundingClientRect().top;
     movePaperPlane();
 
     if (top!=0)
     {
+        var before = document.body.scrollTop;
         document.body.scrollTop += Math.abs(top/35)<1 ? 1 : top/35;
-        setTimeout(goToSingUp, 10);
+        if (before != document.body.scrollTop)
+            setTimeout(goToSingUp, 10);
     }
     else
-    {
          window.location.hash = "sing-up";
-    }
+}
+
+function submitInformation()
+{
+    document.getElementById("sing-up-form").classList.add("hidden");
+    document.getElementById("create-acc").classList.add("hidden");
+    document.getElementById("sing-up-img").classList.remove("hidden");
 }

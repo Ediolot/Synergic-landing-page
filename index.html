@@ -5,6 +5,11 @@
         Metatags
         Añadir iconos redes sociales
         Mostrar barra scroll
+        Cambiar los display none / inline block con una clase, no con el estilo en js
+        Compreobar prefijos en css y uso de la web en otros navegadores
+        Aparte de visibilidad, hay que cambiar opacidad
+        Cambiar clases mdl en el css
+        Header
         -->
         <meta charset="utf-8">
         <title>Synergic</title>
@@ -77,9 +82,9 @@
                 </div>
                 <div class="buttons-wrapper">
                     <!-- Entrar -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button">Sing in</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button mdl-js-ripple-effect">Sing in</button>
                     <!-- Registrarse -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button" onclick="goToSingUp()">Sign up</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button mdl-js-ripple-effect" onclick="goToSingUp()">Sign up</button>
                 </div>
 
             </div>
@@ -90,16 +95,73 @@
 
             <form id="sing-up-form" action="pagina2.html" method="GET">
 
-                <!-- NAME -->
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input color" type="text" id="nametextfield">
-                    <label class="mdl-textfield__label color" for="nametextfield">Name</label>
+                <div class="wrapper">
+                    <!-- NAME -->
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="text" id="nametextfield">
+                        <label class="mdl-textfield__label color" for="nametextfield">Name</label>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="text" id="nametextfield">
+                        <label class="mdl-textfield__label color" for="nametextfield">Email</label>
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <!-- PASSWORD -->
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="password" id="nametextfield">
+                        <label class="mdl-textfield__label color" for="nametextfield">Password</label>
+                    </div>
+
+                    <!-- CONFIRM PASSWORD -->
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="password" id="nametextfield">
+                        <label class="mdl-textfield__label color" for="nametextfield">Confirm password</label>
+                    </div>
+                </div>
+
+                <div class="wrapper">
+
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+                        <label class="mdl-textfield__label" for="sample5">Tell us about you ! ... </label>
+                    </div>
+
+                    <div class="radios-wrapper">
+                        <div class="radio-wrapper">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                                <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+                                <span class="mdl-radio__label">First</span>
+                            </label>
+                        </div>
+
+                        <div class="radio-wrapper">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+                                <span class="mdl-radio__label">Second</span>
+                            </label>
+                        </div>
+
+                        <div class="radio-wrapper">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                                <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
+                                <span class="mdl-radio__label">Third</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </form>
 
-        </section>
+            <div class="wrapper">
+                <button id="create-acc" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button mdl-js-ripple-effect">Create account</button>
+            </div>
 
-        <section id="more-info" class="main-section"></section>
+            <img id="sing-up-img" src="images/illustration.svg" alt=""/>
+
+        </section>
 
         <!-- MDL mega footer -->
         <footer class="mdl-mega-footer">
