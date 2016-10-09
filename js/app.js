@@ -98,7 +98,7 @@ function checkForm()
     check[2] = checkSimple(passEl, error_passEl, PASS_REGEX)
     check[3] = checkPasswordConfirm(passEl, pass_confirmEl, error_pass_confirmEl);
 
-    return (check[0] && check[1] && check[2] && check[3]) && (nameEl!="" && emailEl!="" && passEl!="" && pass_confirmEl!="");
+    return (check[0] && check[1] && check[2] && check[3]) && (nameEl.value!="" && emailEl.value!="" && passEl.value!="" && pass_confirmEl.value!="");
 }
 
 function checkName(textElement, errorElement, regex)
