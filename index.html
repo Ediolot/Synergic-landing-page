@@ -3,13 +3,6 @@
     <head>
         <!-- TODO
         Metatags
-        Añadir iconos redes sociales
-        Mostrar barra scroll
-        Cambiar los display none / inline block con una clase, no con el estilo en js
-        Compreobar prefijos en css y uso de la web en otros navegadores
-        Aparte de visibilidad, hay que cambiar opacidad
-        Cambiar clases mdl en el css
-        Header
         -->
         <meta charset="utf-8">
         <title>Synergic</title>
@@ -20,6 +13,8 @@
         <link rel="stylesheet" href="css/MDL/material.indigo-pink.min.css">
         <!-- MY STYLES -->
         <link rel="stylesheet" href="css/style.css">
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Coming+Soon|Josefin+Slab|Lato:700|Roboto:300" rel="stylesheet">
 
         <!-- SCRIPTS -->
         <!-- MDL SCRIPTS -->
@@ -30,13 +25,37 @@
     </head>
     <body>
 
-        <header>
-
-        </header>
+        <!-- MDL HEADER -->
+        <div class="mdl-layout mdl-js-layout">
+          <header class="mdl-layout__header mdl-layout__header--scroll header-color">
+            <div class="mdl-layout__header-row">
+              <!-- Add spacer, to align navigation to the right -->
+              <div class="mdl-layout-spacer"></div>
+              <!-- Navigation -->
+              <nav class="mdl-navigation">
+                <a class="mdl-navigation__link lato" href="">About us</a>
+                <a class="mdl-navigation__link lato" href="">Getting started</a>
+                <a class="mdl-navigation__link lato" href="">Projects</a>
+                <a class="mdl-navigation__link lato" href="">Users</a>
+              </nav>
+            </div>
+          </header>
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Synergic</span>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="">About us</a>
+              <a class="mdl-navigation__link" href="">Getting started</a>
+              <a class="mdl-navigation__link" href="">Projects</a>
+              <a class="mdl-navigation__link" href="">Users</a>
+            </nav>
+          </div>
+        </div>
 
         <!-- TITLE -->
-        <section id="title" class="main-section">
-            <h1>Synergic</h1>
+        <section id="title" class="main-section title-section">
+
+            <h1 class="company-name josefin-slab">Synergic</h1>
+
             <!-- PAPER PLANE -->
             <svg id="paper-plane" width="95" height="50">
                 <g transform="scale(5,5)">
@@ -46,106 +65,121 @@
                     <path d = "M 4 5 L 19 2 L 8 10 L 4 5" fill="#eee"/>
                 </g>
             </svg>
+
         </section>
 
         <!-- INFORMATION -->
-        <section id="information" class="main-section">
+        <section class="main-section information-section">
 
-            <!-- INFORMATION TEXT -->
-            <div id="information-text">
+            <!-- INFORMATION TEXT PANEL -->
+            <div class="information-text-wrapper">
+                <div class="information-inner-text-wrapper">
 
-                <div class="wrapper">
-                    <div id="inner-text">
-                        <span>Why use synergic ?<span>
-                        <p>Synergic is a great tool for to maintaining your projects syncronized
-                        helping your team end the task faster and easily without possible problems
-                        of deficient communication, missed information or close dead lines.</p>
-                        <span>Who can use synergic ?<span>
-                        <p>Synergic can be used by anyone who is willing to enlist into a new project.
-                        Scholars, students, teachers, workers, everyone can use it. Synergic is completely
-                        free and open source, so there is no excuse to start now ! </p>
-                    </div>
+                    <span class="lato">Why use synergic ?</span>
+                    <p class="information-text roboto">
+                    Synergic is a great tool for to maintaining your projects syncronized
+                    helping your team end the task faster and easily without possible problems
+                    of deficient communication, missed information or close dead lines.
+                    </p>
+
+                    <span class="lato">Who can use synergic ?</span>
+                    <p class="information-text roboto">
+                    Synergic can be used by anyone who is willing to enlist into a new project.
+                    Scholars, students, teachers, workers, everyone can use it. Synergic is completely
+                    free and open source, so there is no excuse to start now !
+                    </p>
+
                 </div>
-
             </div>
 
             <!-- LINE SEPARATOR -->
-            <div id="line-container" class="information-box"><div class="line"></div></div>
+            <div class="line-container"><div class="line"></div></div>
 
-            <!-- BUTTONS -->
-            <div id="information-buttons" class="information-box" >
+            <!-- SING UP / SING IN  -  PANEL -->
+            <div class="information-log">
 
-                <div class="wrapper">
-                    <div class="img-box" id="tools-image"><img  src="images/tools.svg"></img><span>Build</span></div>
-                    <div class="img-box" id="flask-image"><img src="images/flask.svg"></img><span>Test</span></div>
-                    <div class="img-box" id="analytics-image"><img src="images/analytics.svg"></img><span>Deploy</span></div>
-                </div>
-                <div class="buttons-wrapper">
+                <!-- IMAGES -->
+                <div id="tools-image"     class="information-img-box"><img src="images/tools.svg"></img>
+                    <span class="information-img-descript coming-soon">
+                    Build</span></div>
+
+                <div id="flask-image"     class="information-img-box"><img src="images/flask.svg"></img>
+                    <span class="information-img-descript coming-soon">
+                    Test</span></div>
+
+                <div id="analytics-image" class="information-img-box"><img src="images/analytics.svg"></img>
+                    <span class="information-img-descript coming-soon">
+                    Deploy</span></div>
+
+                <!-- BUTTONS -->
+                <div class="information-buttons-wrapper">
                     <!-- Entrar -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button mdl-js-ripple-effect">Sing in</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
+                    Sing in</button>
                     <!-- Registrarse -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button mdl-js-ripple-effect" onclick="goToSingUp()">Sign up</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect" onclick="goToSingUp()">
+                    Sign up</button>
                 </div>
 
             </div>
         </section>
 
         <!-- SIGN UP -->
-        <section id="sing-up" class="main-section">
+        <section id="sing-up" class="main-section sing-up-section">
 
-            <form id="sing-up-form" action="pagina2.html" method="GET">
+            <form id="sing-up-form" class="hidden" action="pagina2.html" method="GET">
 
-                <div class="wrapper">
+                <div class="sing-up-form-row">
                     <!-- NAME -->
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="text" id="nametextfield">
-                        <label class="mdl-textfield__label color" for="nametextfield">Name</label>
+                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="text" id="name-text">
+                        <label class="mdl-textfield__label sing-up-textfield-label color" for="name-text">Name</label>
                     </div>
 
                     <!-- EMAIL -->
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="text" id="nametextfield">
-                        <label class="mdl-textfield__label color" for="nametextfield">Email</label>
+                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="text" id="email-text">
+                        <label class="mdl-textfield__label sing-up-textfield-label" for="email-text">Email</label>
                     </div>
                 </div>
 
-                <div class="wrapper">
+                <div class="sing-up-form-row">
                     <!-- PASSWORD -->
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="password" id="nametextfield">
-                        <label class="mdl-textfield__label color" for="nametextfield">Password</label>
+                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="password" id="pass-text">
+                        <label class="mdl-textfield__label sing-up-textfield-label" for="pass-text">Password</label>
                     </div>
 
                     <!-- CONFIRM PASSWORD -->
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="password" id="nametextfield">
-                        <label class="mdl-textfield__label color" for="nametextfield">Confirm password</label>
+                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input color" type="password" id="confirm-pass-text">
+                        <label class="mdl-textfield__label sing-up-textfield-label" for="confirm-pass-text">Confirm password</label>
                     </div>
                 </div>
 
-                <div class="wrapper">
+                <div class="sing-up-form-row">
 
-                    <div class="mdl-textfield mdl-js-textfield">
+                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield">
                         <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-                        <label class="mdl-textfield__label" for="sample5">Tell us about you ! ... </label>
+                        <label class="mdl-textfield__label sing-up-textfield-label" for="sample5">Tell us about you ! ... </label>
                     </div>
 
-                    <div class="radios-wrapper">
-                        <div class="radio-wrapper">
+                    <div class="sing-up-radio-wrapper">
+                        <div class="sing-up-radio-row">
                             <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
                                 <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
                                 <span class="mdl-radio__label">First</span>
                             </label>
                         </div>
 
-                        <div class="radio-wrapper">
+                        <div class="sing-up-radio-row">
                             <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
                                 <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
                                 <span class="mdl-radio__label">Second</span>
                             </label>
                         </div>
 
-                        <div class="radio-wrapper">
+                        <div class="sing-up-radio-row">
                             <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
                                 <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
                                 <span class="mdl-radio__label">Third</span>
@@ -155,15 +189,15 @@
                 </div>
             </form>
 
-            <div class="wrapper">
-                <button id="create-acc" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored my-mdl-button mdl-js-ripple-effect">Create account</button>
-            </div>
+            <!-- SUBMIT BUTTON -->
+            <button id="create-acc" class="sing-up-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect hidden">Create account</button>
 
-            <img id="sing-up-img" src="images/illustration.svg" alt=""/>
+            <!-- ALTERNATIVE IMAGE -->
+            <img id="sing-up-img" class="sing-up-img" src="images/illustration.svg" alt=""/>
 
         </section>
 
-        <!-- MDL mega footer -->
+        <!-- MDL FOOTER -->
         <footer class="mdl-mega-footer">
         <div class="mdl-mega-footer__middle-section">
 
@@ -193,7 +227,7 @@
                 <ul class="mdl-mega-footer__link-list">
                     <li><a href="#">Twitter</a></li>
                     <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Gmail</a></li>
+                    <li><a href="#">Google plus</a></li>
                 </ul>
             </div>
 

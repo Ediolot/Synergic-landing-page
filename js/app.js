@@ -10,7 +10,7 @@ window.onload = function ()
 
 function movePaperPlane()
 {
-    var scroll      = document.body.scrollTop;
+    var scroll      = getScroll();
     var plane       = document.getElementById("paper-plane");
     var planeWidth  = document.getElementById("paper-plane").getBBox().width;
     var titleWidth  = document.getElementById("title").offsetWidth;
@@ -25,29 +25,47 @@ function movePaperPlane()
 
 function goToSingUp()
 {
-    // TODO speed up this
+    const ERROR = 0.2;
+
+    hiddeSingUpImage();
+    movePaperPlane();
+
+    var top = document.getElementById("sing-up").getBoundingClientRect().top;
+
+    if (Math.abs(top)>ERROR && incrementScroll(Math.abs(top/35)<1 ? 1 : top/35)>ERROR)
+        setTimeout(goToSingUp, 10);
+}
+
+function getScroll()
+{
+    return document.documentElement.scrollTop || document.body.scrollTop || 0;
+}
+
+function incrementScroll(value)
+{
+    var before = getScroll();
+
+    document.documentElement.scrollTop += value;
+    document.body.scrollTop += value;
+
+    return Math.abs(before-getScroll());
+}
+
+function hiddeSingUpImage()
+{
     document.getElementById("sing-up-img").classList.add("hidden");
     document.getElementById("sing-up-form").classList.remove("hidden");
     document.getElementById("create-acc").classList.remove("hidden");
+}
 
-    document.getElementById("sing-up").style.display = "inline-block";
-    var top = document.getElementById("sing-up").getBoundingClientRect().top;
-    movePaperPlane();
-
-    if (top!=0)
-    {
-        var before = document.body.scrollTop;
-        document.body.scrollTop += Math.abs(top/35)<1 ? 1 : top/35;
-        if (before != document.body.scrollTop)
-            setTimeout(goToSingUp, 10);
-    }
-    else
-         window.location.hash = "sing-up";
+function displaySingUpImage()
+{
+    document.getElementById("sing-up-img").classList.remove("hidden");
+    document.getElementById("sing-up-form").classList.add("hidden");
+    document.getElementById("create-acc").classList.add("hidden");
 }
 
 function submitInformation()
 {
-    document.getElementById("sing-up-form").classList.add("hidden");
-    document.getElementById("create-acc").classList.add("hidden");
-    document.getElementById("sing-up-img").classList.remove("hidden");
+    displaySingUpImage();
 }

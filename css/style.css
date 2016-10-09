@@ -1,45 +1,62 @@
 
-@import 'https://fonts.googleapis.com/css?family=Roboto:300|Josefin+Slab|Lato:700|Coming+Soon';
 
 /* NO SCROLLBAR */
 body {
     margin: 0;
-    overflow: -moz-scrollbars-none; /* Mozilla */
+    /*overflow: -moz-scrollbars-none; /* Mozilla */
     -ms-overflow-style: none; /* Edge, IE9 */
 }
 
 ::-webkit-scrollbar { /* Chrome */
-    width: 0px;
+    width: 0;
     background: transparent;
 }
 
-html, body{
+html, body {
     height: 100%;
 }
 
 /*********************************/
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 50px;
-    background: #FFFFFF;
+.header-color {
+    background: #59A3FC;
+    color: #FFFFFF;
 }
 
 /*********************************/
 
 .main-section {
     width: 100%;
+    display: inline-block;
 }
 
 .hidden {
     display: none;
 }
 
+.josefin-slab { font-family: 'Josefin Slab', serif; }
+.lato         { font-family: 'Lato', sans-serif; }
+.roboto       { font-family: 'Roboto', sans-serif; }
+.coming-soon  { font-family: 'Coming soon', cursive; }
+
 /*********************************/
+
+.title-section {
+    height: 50%;
+    background: #59A3FC;
+    display: table;
+
+    text-align:center;
+    color: #FFF;
+}
+
+.company-name {
+    font-size: 90px;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    z-index: 2;
+}
 
 #paper-plane {
     position: absolute;
@@ -52,183 +69,129 @@ header {
     transition: 0.8s linear;
 }
 
-#title {
-    height: 50%;
-    text-align:center;
-    display: table;
-    background: #59a3fc;
-    color: #FFFFFF;
-}
-
-#title h1 {
-    font-family: 'Josefin Slab', serif;
-    font-size: 90px;
-    font-weight: lighter;
-    text-transform: uppercase;
-    display: table-cell;
-    vertical-align: middle;
-    z-index: 2;
-}
-
 /*********************************/
 
-.line {
-    margin-left: 50%;
-    margin-top: 10vh;
-    width: 0;
-    height: 30vh;
-    border-left: 3px solid #CCC;
-    border-right: 3px solid #CCC;
-    border-bottom: 0;
-    border-top: 0;
-    border-radius: 5px;
-}
-
-#information {
+.information-section {
     min-height: 50%;
-    display: inline-block;
-    background: #FFFFFF;
+    background: #FFF;
 }
 
-#information-text {
+.information-text-wrapper {
     height: 100%;
     width: 45%;
     float: left;
+    text-align: center;
 }
 
-#line-container {
-    height: 100%;
-    width: 10%;
-    float: left;
-}
-
-#information-buttons {
-    height: 100%;
-    width: 45%;
-    float: left;
-}
-
-#inner-text {
+.information-inner-text-wrapper {
     display: inline-block;
     max-width: 400px;
     padding: 10px;
     padding-top: 60px;
 }
 
-#inner-text span {
-    font-family: 'Lato', sans-serif;
-}
-
-#inner-text p {
+.information-text {
     padding-top: 15px;
     padding-bottom: 20px;
     text-align: justify;
     text-justify: inter-word;
-    font-family: 'Roboto', sans-serif;
 }
 
-.wrapper {
+.line-container {
+    height: 100%;
+    width: 10%;
+    float: left;
+}
+
+.line {
+    margin-left: 50%;
+    margin-top: 10vh;
+    width: 0;
+    height: 30vh;
+    border-left:   3px solid #CCC;
+    border-right:  3px solid #CCC;
+    border-bottom: 0;
+    border-top:    0;
+}
+
+.information-log {
+    margin-top: 30px;
+    height: 100%;
+    width: 45%;
+    float: left;
     text-align: center;
 }
 
-.buttons-wrapper {
-    text-align: center;
-    margin-top: 15%;
-}
-
-.my-mdl-button {
+.information-button {
     display: inline-block;
     min-width: 100px;
     margin: 20px;
+    margin-top: 60px;
 }
 
-.img-box {
-    margin-top: 60px;
-    margin-left: 8%;
-    margin-right: 8%;
+.information-img-box {
+    margin-top:   60px;
+    margin-left:   8%;
+    margin-right:  8%;
+    margin-bottom: 0;
     max-width: 150px;
     width: 15%;
     display: inline-block;
 }
 
-.img-box span {
+.information-img-descript {
     line-height: 50px;
-    font-family: 'Coming soon', cursive;
     text-transform: uppercase;
-}
-
-#analytics-image {
-}
-
-#footer-wrapper {
-    width: 100%;
-}
-
-.img-footer {
-    margin-top: 60px;
-    margin-left: 8%;
-    margin-right: 8%;
-    max-width: 150px;
-    width: 15%;
 }
 
 /*********************************/
 
-#sing-up {
-    display: inline-block;
+.sing-up-section {
     min-height: 50%;
-    background: #FFFFFF;
+    background: #FFF;
     border-top: 10px solid #EEEEEE;
+    text-align: center;
 }
 
-#sing-up-img {
+.sing-up-img {
     max-height: 450px;
     width: 100%;
 }
 
-.mdl-textfield {
-    margin-top: 30px;
+.sing-up-textfield {
+    margin-top:   30px;
     margin-right: 40px;
-    margin-left: 40px;
+    margin-left:  40px;
 }
 
-.mdl-textfield__label {
+.sing-up-textfield-label {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.radio-wrapper {
-    display: block;
-    margin: 10px;
-    text-align: left;
+.sing-up-radio-row {
+    margin: 20px;
 }
 
-.radios-wrapper {
+.sing-up-radio-wrapper {
     display: inline-block;
     width: 300px;
     margin: 10px;
+    text-align: left;
     margin-right: 40px;
     margin-left: 40px;
 }
 
-/*********************************/
-
-#more-info {
-    display: inline-block;
-    height: 50%;
-    background: #59a3fc;
+.sing-up-button {
+    margin: 20px;
 }
 
 /*********************************/
 
 @media (max-width: 1000px) {
-    #information-text {
-        height: 60%;
+    .information-text-wrapper {
         width: 100%;
     }
-    #wrapper {
-        margin-top: 5%;
-    }
-    #line-container {
+    .line-container {
         margin-left: 10%;
         margin-bottom: 3%;
         margin-top: 2%;
@@ -236,39 +199,26 @@ header {
         width: 80%;
         border-bottom: 3px solid #CCC;
     }
-    #information-buttons {
-        height: 34%;
-        width: 100%;
-    }
     .line {
         width: 0;
         height: 0;
         border: none;
     }
-    .img-box {
-        margin-top: 0;
-        width: 10%;
-    }
-    #analytics-image {
-        margin-top: 30px;
-    }
-
-    .buttons-wrapper {
-        text-align: center;
-        margin-top: 0;
+    .information-log {
+        width: 100%;
     }
 }
 
-@media (max-width: 500px)
+@media (max-width: 550px)
 {
-    #title h1 {
+    .company-name {
         font-size: 50px;
     }
 }
 
 @media (max-width: 360px)
 {
-    .mdl-textfield {
+    .information-textfield {
         width: 200px;
     }
 }
