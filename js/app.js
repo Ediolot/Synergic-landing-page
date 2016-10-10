@@ -3,6 +3,8 @@ window.onload = function ()
 {
     movePaperPlane();
 
+    setScroll(0);
+
     document.addEventListener("scroll", movePaperPlane);
     window.addEventListener("resize", movePaperPlane);
     document.getElementById("create-acc").addEventListener("click", submitInformation);
@@ -40,7 +42,7 @@ function goToSingUp()
 
     var top = document.getElementById("sing-up").getBoundingClientRect().top;
     var inc = Math.abs(top)<SPEED ? top : SPEED*Math.abs(top)/top;
-
+    console.log(inc, top)
     if (Math.abs(top)>ERROR && incrementScroll(inc)>ERROR)
         setTimeout(goToSingUp, 10);
 }
