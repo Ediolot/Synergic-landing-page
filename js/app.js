@@ -33,13 +33,15 @@ function movePaperPlane()
 function goToSingUp()
 {
     var ERROR = 2;
+    var SPEED = 20;
 
     hiddeSingUpImage();
     movePaperPlane();
 
     var top = document.getElementById("sing-up").getBoundingClientRect().top;
+    var inc = Math.abs(top)<SPEED ? top : SPEED*Math.abs(top)/top;
 
-    if (Math.abs(top)>ERROR && incrementScroll(Math.abs(top/35)<1 ? 1 : top/35)>ERROR)
+    if (Math.abs(top)>ERROR && incrementScroll(inc)>ERROR)
         setTimeout(goToSingUp, 10);
 }
 
@@ -48,13 +50,16 @@ function getScroll()
     return document.documentElement.scrollTop || document.body.scrollTop || 0;
 }
 
+function setScroll(value)
+{
+    document.documentElement.scrollTop = value;
+    document.body.scrollTop = value;
+}
+
 function incrementScroll(value)
 {
     var before = getScroll();
-
-    document.documentElement.scrollTop += value;
-    document.body.scrollTop += value;
-
+    setScroll(before+value);
     return Math.abs(before-getScroll());
 }
 
@@ -139,6 +144,5 @@ function submitInformation()
     if (!checkForm()) return;
 
     document.getElementById("sing-up-form").submit();
-    console.log(document.getElementById("sing-up-form"));
-    //displaySingUpImage();
+    displaySingUpImage();
 }
