@@ -134,7 +134,6 @@ function preventMultispacesOn(element, event)
 
     if (event.keyCode==32 && start==end)
     {
-        console.log("in");
         if (element.value[start-1] == " ") // Ya hay un espacio antes
             event.preventDefault();
 
