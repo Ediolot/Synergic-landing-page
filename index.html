@@ -111,10 +111,10 @@
                 <!-- BUTTONS -->
                 <div class="information-buttons-wrapper">
                     <!-- Entrar -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
+                    <button id="sing-in-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
                     Sing in</button>
                     <!-- Registrarse -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect" onclick="goToSingUp()">
+                    <button id="sing-up-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
                     Sign up</button>
                 </div>
 
@@ -124,7 +124,7 @@
         <!-- SIGN UP -->
         <section id="sing-up" class="main-section sing-up-section">
 
-            <form id="sing-up-form" class="hidden" action="pagina2.html" method="GET">
+            <form id="sing-up-form" class="hidden" onsubmit="return validateForm();" action="pagina2.html" method="GET">
 
                 <div class="sing-up-form-row">
                     <!-- NAME -->
@@ -187,10 +187,9 @@
                         </div>
                     </div>
                 </div>
-            </form>
 
-            <!-- SUBMIT BUTTON -->
-            <button id="create-acc" class="sing-up-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect hidden">Create account</button>
+                <button id="create-acc" class="sing-up-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect hidden">Create account</button>
+            </form>
 
             <!-- ALTERNATIVE IMAGE -->
             <img id="sing-up-img" class="sing-up-img" src="images/illustration.svg" alt=""/>

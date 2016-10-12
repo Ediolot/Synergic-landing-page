@@ -7,13 +7,17 @@ window.onload = function ()
 
     document.addEventListener("scroll", movePaperPlane);
     window.addEventListener("resize", movePaperPlane);
-    document.getElementById("create-acc").addEventListener("click", submitInformation);
 
-    var form = document.getElementById("sing-up-form");
+    document.getElementById("sing-up-button").addEventListener("click", function () {
+        goToSingUp();
+        hiddeSingUpImage();
+    });
+
+    var form = document.forms["sing-up-form"];
     for (var i=0; i<form.children.length; ++i)
     {
-        form.children[i].addEventListener("keyup", checkForm);
-        form.children[i].addEventListener("keydown", checkForm);
+        form.children[i].addEventListener("keydown", validateForm);
+        form.children[i].addEventListener("keyup", validateForm);
     }
 }
 
@@ -37,12 +41,11 @@ function goToSingUp()
     var ERROR = 2;
     var SPEED = 20;
 
-    hiddeSingUpImage();
     movePaperPlane();
 
     var top = document.getElementById("sing-up").getBoundingClientRect().top;
     var inc = Math.abs(top)<SPEED ? top : SPEED*Math.abs(top)/top;
-    console.log(inc, top)
+
     if (Math.abs(top)>ERROR && incrementScroll(inc)>ERROR)
         setTimeout(goToSingUp, 10);
 }
@@ -72,79 +75,66 @@ function hiddeSingUpImage()
     document.getElementById("create-acc").classList.remove("hidden");
 }
 
-function displaySingUpImage()
-{
-    document.getElementById("sing-up-img").classList.remove("hidden");
-    document.getElementById("sing-up-form").classList.add("hidden");
-    document.getElementById("create-acc").classList.add("hidden");
-}
-
-
-function checkForm()
+function validateForm(event)
 {
     var NAME_REGEX  = /^[A-Z][a-z']+(\s[A-Z][a-z']+)+$/;
     var EMAIL_REGEX = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
     var PASS_REGEX  = /^.{6,18}$/;
 
-    var nameEl       = document.getElementById("name-text");
-    var error_nameEl = document.getElementById("name-error");
+    var form = document.forms["sing-up-form"];
 
-    var emailEl       = document.getElementById("email-text");
-    var error_emailEl = document.getElementById("email-error");
-
-    var passEl       = document.getElementById("pass-text");
-    var error_passEl = document.getElementById("pass-error");
-
-    var pass_confirmEl       = document.getElementById("confirm-pass-text");
+    var error_nameEl         = document.getElementById("name-error");
+    var error_emailEl        = document.getElementById("email-error");
+    var error_passEl         = document.getElementById("pass-error");
     var error_pass_confirmEl = document.getElementById("confirm-pass-error");
 
+    preventMultispacesOn(form["name-text"], event);
+    preventSpacesOn(form["email-text"], event);
+
     var check = [];
+    check["name"]         = validateInput(form["name-text"], error_nameEl, NAME_REGEX);
+    check["email"]        = validateInput(form["email-text"], error_emailEl, EMAIL_REGEX);
+    check["pass"]         = validateInput(form["pass-text"], error_passEl, PASS_REGEX);
 
-    check[0] = checkName(nameEl, error_nameEl, NAME_REGEX)
-    check[1] = checkSimple(emailEl, error_emailEl, EMAIL_REGEX)
-    check[2] = checkSimple(passEl, error_passEl, PASS_REGEX)
-    check[3] = checkPasswordConfirm(passEl, pass_confirmEl, error_pass_confirmEl);
+    check["pass-confirm"] = form["confirm-pass-text"].value==form["pass-text"].value;
+    error_pass_confirmEl.style.visibility = (check["pass-confirm"] || !form["confirm-pass-text"].value) ? "hidden" : "visible";
 
-    return (check[0] && check[1] && check[2] && check[3]) && (nameEl.value!="" && emailEl.value!="" && passEl.value!="" && pass_confirmEl.value!="");
+    return check["name"] && check["email"] && check["pass"] && check["pass-confirm"];
 }
 
-function checkName(textElement, errorElement, regex)
+function validateInput(textElement, errorElement, regex)
 {
-    var start = textElement.selectionStart;
-    var end   = textElement.selectionEnd;
+    var valid = regex.test(textElement.value) && !!textElement.value;
+    errorElement.style.visibility = (valid || !textElement.value) ? "hidden" : "visible";
+    return valid;
+}
 
-    var oldText = textElement.value;
-    var newText = textElement.value.replace(/ +/g, " ");
-    var valid   = regex.test(newText) || textElement.value=="";
+function preventSpacesOn(element, event)
+{
+    if (element != document.activeElement) return;
+    if (event.keyCode==32) event.preventDefault();
+}
 
-    if (textElement == document.activeElement)
+function preventMultispacesOn(element, event)
+{
+    if (element != document.activeElement) return;
+
+    var start = element.selectionStart;
+    var end   = element.selectionEnd;
+
+    if (event.keyCode==32 && start==end)
     {
-        textElement.value = newText;
-        textElement.setSelectionRange(start, oldText!=newText ? end-1 : end);
-        errorElement.style.visibility = valid ? "hidden" : "visible";
+        console.log("in");
+        if (element.value[start-1] == " ") // Ya hay un espacio antes
+            event.preventDefault();
+
+        if (element.value[start] == " ") // Ya hay un espacio después
+        {
+            element.setSelectionRange(start+1, start+1);
+            event.preventDefault();
+        }
+
+        if (start == 0) // Espacios al principio
+            event.preventDefault();
     }
-
-    return valid;
-}
-
-function checkSimple(textElement, errorElement, regex)
-{
-    var valid = regex.test(textElement.value) || textElement.value=="";
-    errorElement.style.visibility = valid ? "hidden" : "visible";
-    return valid;
-}
-
-function checkPasswordConfirm(textElement_pass, textElement_confirm, errorElement)
-{
-    var valid = textElement_pass.value==textElement_confirm.value || textElement_confirm.value=="";
-    errorElement.style.visibility = valid ? "hidden" : "visible";
-    return valid;
-}
-
-function submitInformation()
-{
-    if (!checkForm()) return;
-
-    document.getElementById("sing-up-form").submit();
-    displaySingUpImage();
 }
