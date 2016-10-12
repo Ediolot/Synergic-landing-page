@@ -21,6 +21,7 @@ window.onload = function ()
     }
 }
 
+// Mueve el avión
 function movePaperPlane()
 {
     var scroll      = getScroll();
@@ -36,6 +37,7 @@ function movePaperPlane()
     plane.style.transform = "translate("+x+"px,0)";
 }
 
+// Desplaza el scroll-y hasta la sección de registro
 function goToSingUp()
 {
     var ERROR = 2;
@@ -50,17 +52,20 @@ function goToSingUp()
         setTimeout(goToSingUp, 10);
 }
 
+// Devuelve el valor del scroll-y actual
 function getScroll()
 {
     return document.documentElement.scrollTop || document.body.scrollTop || 0;
 }
 
+// Fija el valor del scroll-y actual
 function setScroll(value)
 {
     document.documentElement.scrollTop = value;
     document.body.scrollTop = value;
 }
 
+// Incrementa el scroll-y y devuelve cuanto ha sido incrementado
 function incrementScroll(value)
 {
     var before = getScroll();
@@ -68,6 +73,7 @@ function incrementScroll(value)
     return Math.abs(before-getScroll());
 }
 
+// Esconde la imagen del registro
 function hiddeSingUpImage()
 {
     document.getElementById("sing-up-img").classList.add("hidden");
@@ -75,6 +81,7 @@ function hiddeSingUpImage()
     document.getElementById("create-acc").classList.remove("hidden");
 }
 
+// Valida el formulario
 function validateForm(event)
 {
     var NAME_REGEX  = /^[A-Z][a-z']+(\s[A-Z][a-z']+)+$/;
@@ -102,6 +109,7 @@ function validateForm(event)
     return check["name"] && check["email"] && check["pass"] && check["pass-confirm"];
 }
 
+// Comprueba si un input es válido frente a una expresión regular
 function validateInput(textElement, errorElement, regex)
 {
     var valid = regex.test(textElement.value) && !!textElement.value;
@@ -109,12 +117,14 @@ function validateInput(textElement, errorElement, regex)
     return valid;
 }
 
+// Evita los eventos que producen una tecla espacio en un elemento
 function preventSpacesOn(element, event)
 {
     if (element != document.activeElement) return;
     if (event.keyCode==32) event.preventDefault();
 }
 
+// Evita los eventos que producen una tecla espacio en un elemento si ya había uno en esa posición
 function preventMultispacesOn(element, event)
 {
     if (element != document.activeElement) return;
