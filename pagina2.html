@@ -3,7 +3,6 @@
     window.onload = function ()
     {
         var ul = document.getElementById("list");
-        var queryDict = {};
 
         location.search.substr(1).split("&").forEach(function(item) {
 
@@ -12,7 +11,7 @@
             ul.appendChild(li);
         });
     }
-    
+
 </script>
 
 <h3>GET</h3>
