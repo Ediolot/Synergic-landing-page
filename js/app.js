@@ -85,7 +85,7 @@ function hiddeSingUpImage()
 function validateForm(event)
 {
     var NAME_REGEX  = /^[A-Z][a-z']+(\s[A-Z][a-z']+)+$/;
-    var EMAIL_REGEX = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+    var EMAIL_REGEX = /^([a-z0-9_\.-]{2,})@([\da-z\.-]{2,})\.([a-z\.]{2,6})$/;
     var PASS_REGEX  = /^.{6,18}$/;
 
     var form = document.forms["sing-up-form"];
