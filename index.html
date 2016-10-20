@@ -4,242 +4,268 @@
         <meta charset="utf-8">
         <meta name="description" content="Synergic landing page">
         <meta name="keywords" content="projects, collaborate, collaborative, synergic, organize, plan">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Synergic</title>
 
         <!-- STYLES -->
         <!-- MDL STYLES -->
         <link rel="stylesheet" href="css/MDL/icon.css">
         <link rel="stylesheet" href="css/MDL/material.indigo-pink.min.css">
+        <!-- BOOTRSTRAP -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- MY STYLES -->
         <link rel="stylesheet" href="css/style.css">
-
-        <!-- SCRIPTS -->
-        <!-- MDL SCRIPTS -->
-        <script defer src="js/MDL/material.min.js"></script>
-        <!-- MY SCRIPTS -->
-        <script src="js/app.js"></script>
 
     </head>
     <body>
 
-        <!-- MDL HEADER -->
-        <div class="mdl-layout mdl-js-layout">
-          <header class="mdl-layout__header mdl-layout__header--scroll header-color">
-            <div class="mdl-layout__header-row">
-              <!-- Add spacer, to align navigation to the right -->
-              <div class="mdl-layout-spacer"></div>
-              <!-- Navigation -->
-              <nav class="mdl-navigation">
-                <a class="mdl-navigation__link lato" href="">About us</a>
-                <a class="mdl-navigation__link lato" href="">Getting started</a>
-                <a class="mdl-navigation__link lato" href="">Projects</a>
-                <a class="mdl-navigation__link lato" href="">Users</a>
-              </nav>
-            </div>
-          </header>
-          <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Synergic</span>
-            <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="">About us</a>
-              <a class="mdl-navigation__link" href="">Getting started</a>
-              <a class="mdl-navigation__link" href="">Projects</a>
-              <a class="mdl-navigation__link" href="">Users</a>
-            </nav>
-          </div>
-        </div>
+        <div class="container-full" ng-app="synergic-app" ng-controller="synergic-controller">
 
-        <!-- TITLE -->
-        <section id="title" class="main-section title-section">
+            <ul class="nav nav-pills">
+                <li class="nav-item active">
+                    <a class="nav-link lato" data-toggle="pill" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link lato" data-toggle="pill" href="#register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link lato" data-toggle="pill" href="#more">More</a>
+                </li>
+            </ul>
 
-            <h1 class="company-name josefin-slab">Synergic</h1>
+            <div class="tab-content">
+                <div class="tab-pane in active" id="home" role="tabpanel">
+                  <!-- TITLE -->
+                  <div id="title" class="row title-section vertical-align">
 
-            <!-- PAPER PLANE -->
-            <svg id="paper-plane" width="95" height="50">
-                <g transform="scale(5,5)">
-                    <path d = "M 3 2 L 19 2 L 3  8 L 3 2" fill="#ddd"/>
-                    <path d = "M 4 5 L 19 2 L 3  8 L 4 5" fill="#bbb"/>
-                    <path d = "M 0 0 L 19 2 L 3  3 L 0 0" fill="#eee"/>
-                    <path d = "M 4 5 L 19 2 L 8 10 L 4 5" fill="#eee"/>
-                </g>
-            </svg>
+                      <div class="col-xs-12">
+                          <h1 class="company-name josefin-slab text-center">Synergic</h1>
+                      </div>
 
-        </section>
+                      <!-- PAPER PLANE -->
+                      <svg id="paper-plane" width="95" height="50">
+                          <g transform="scale(5,5)">
+                              <path d = "M 3 2 L 19 2 L 3  8 L 3 2" fill="#ddd"/>
+                              <path d = "M 4 5 L 19 2 L 3  8 L 4 5" fill="#bbb"/>
+                              <path d = "M 0 0 L 19 2 L 3  3 L 0 0" fill="#eee"/>
+                              <path d = "M 4 5 L 19 2 L 8 10 L 4 5" fill="#eee"/>
+                          </g>
+                      </svg>
 
-        <!-- INFORMATION -->
-        <section class="main-section information-section">
+                  </div>
+                  <!-- INFORMATION -->
+                  <div class="row information-section">
 
-            <!-- INFORMATION TEXT PANEL -->
-            <div class="information-text-wrapper">
-                <div class="information-inner-text-wrapper">
+                      <!-- INFORMATION TEXT PANEL -->
+                      <div class="col-sm-6 col-xs-12 text-center separator-line">
 
-                    <span class="lato">Why use synergic ?</span>
-                    <p class="information-text roboto">
-                    Synergic is a great tool for to maintaining your projects syncronized
-                    helping your team end the task faster and easily without possible problems
-                    of deficient communication, missed information or close dead lines.
-                    </p>
+                          <div class="row">
+                              <div class="col-xs-10 col-xs-offset-1">
+                                  <h5 class="lato">Why use synergic ?</h5>
+                                  <p class="information-text roboto">
+                                  Synergic is a great tool for to maintaining your projects syncronized
+                                  helping your team end the task faster and easily without possible problems
+                                  of deficient communication, missed information or close dead lines.</p>
+                                  <h5 class="lato">Who can use synergic ?</h5>
+                                  <p class="information-text roboto">
+                                  Synergic can be used by anyone who is willing to enlist into a new project.
+                                  Scholars, students, teachers, workers, everyone can use it. Synergic is completely
+                                  free and open source, so there is no excuse to start now !</p>
+                              </div>
+                          </div>
+                      </div>
 
-                    <span class="lato">Who can use synergic ?</span>
-                    <p class="information-text roboto">
-                    Synergic can be used by anyone who is willing to enlist into a new project.
-                    Scholars, students, teachers, workers, everyone can use it. Synergic is completely
-                    free and open source, so there is no excuse to start now !
-                    </p>
+                      <!-- SING UP / SING IN  -  PANEL -->
+                      <div class="col-sm-6 col-xs-12">
 
+                          <div class="row">
+                              <!-- IMAGES -->
+                              <div class="col-sm-4 col-xs-12">
+                                  <figure class="figure">
+                                    <img src="images/tools.svg" class="img-center">
+                                    <figcaption class="figure-caption text-center coming-soon">Build</figcaption>
+                                  </figure>
+                              </div>
+                              <div class="col-sm-4 col-xs-12">
+                                  <figure class="figure">
+                                    <img src="images/flask.svg" class="img-center">
+                                    <figcaption class="figure-caption text-center coming-soon">Test</figcaption>
+                                  </figure>
+                              </div>
+                              <div class="col-sm-4 col-xs-12">
+                                  <figure class="figure">
+                                    <img src="images/analytics.svg" class="img-center">
+                                    <figcaption class="figure-caption text-center coming-soon">Deploy</figcaption>
+                                  </figure>
+                              </div>
+                          </div>
+
+                          <!-- BUTTONS -->
+                          <div class="row">
+                              <!-- Entrar  -->
+                              <div class="col-sm-3 col-xs-12 col-sm-offset-3 text-center">
+                                  <a data-toggle="pill" href="#register" id="sing-in-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
+                                  Register</a>
+                              </div>
+                              <!-- Registrarse -->
+                              <div class="col-sm-3 col-xs-12 text-center">
+                                  <a data-toggle="pill" href="#" id="sing-in-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
+                                  Register</a>
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="register" role="tabpanel">
+                  <!-- SIGN UP -->
+                    <div id="sing-up" class="row sing-up-section">
+                      <div class="vertical-spacer"></div>
+                      <div class="col-xs-12 text-center roboto">
+                          <h3>Hello {{name}}!</h3>
+                          <form id="sing-up-form" onsubmit="return validateForm();" action="pagina2.html" method="GET">
+
+                              <div class="row">
+                                  <!-- NAME -->
+                                  <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                      <input name="FullName" class="mdl-textfield__input color" type="text" id="name-text" ng-model="name">
+                                      <label class="mdl-textfield__label sing-up-textfield-label color" for="name-text">Full name</label>
+                                      <span id="name-error" class="mdl-textfield__error">Invalid name (Ex. "Michael Joseph Jackson")</span>
+                                  </div>
+
+                                  <!-- EMAIL -->
+                                  <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                      <input name="Email" class="mdl-textfield__input color" type="text" id="email-text" ng-model="email">
+                                      <label class="mdl-textfield__label sing-up-textfield-label" for="email-text">Email</label>
+                                      <span id="email-error" class="mdl-textfield__error">Invalid email!</span>
+                                  </div>
+                              </div>
+
+                              <div class="row">
+                                  <!-- PASSWORD -->
+                                  <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                      <input name="Password" class="mdl-textfield__input color" type="password" id="pass-text" ng-model="pass">
+                                      <label class="mdl-textfield__label sing-up-textfield-label" for="pass-text">Password</label>
+                                      <span id="pass-error" class="mdl-textfield__error">Password must have between 6 and 18 characters!</span>
+                                  </div>
+
+                                  <!-- CONFIRM PASSWORD -->
+                                  <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                      <input class="mdl-textfield__input color" type="password" id="confirm-pass-text" ng-model="password_confirm">
+                                      <label class="mdl-textfield__label sing-up-textfield-label" for="confirm-pass-text">Confirm password</label>
+                                      <span id="confirm-pass-error" class="mdl-textfield__error">Password dont match!</span>
+                                  </div>
+                              </div>
+
+                              <div class="row">
+
+                                  <div class="mdl-textfield sing-up-textfield mdl-js-textfield">
+                                      <textarea name="About" class="mdl-textfield__input" type="text" rows= "3" id="more-text" ng-model="about"></textarea>
+                                      <label class="mdl-textfield__label sing-up-textfield-label" for="more-text">Tell us about you ! ... </label>
+                                  </div>
+                                    <div class="sing-up-radios">
+                                  <div class="sing-up-radio-wrapper">
+                                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                                          <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" ng-model="radioValue">
+                                          <span class="mdl-radio__label">First</span>
+                                      </label>
+                                  </div>
+
+                                  <div class="sing-up-radio-wrapper">
+                                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                                          <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" ng-model="radioValue">
+                                          <span class="mdl-radio__label">Second</span>
+                                      </label>
+                                  </div>
+
+                                  <div class="sing-up-radio-wrapper">
+                                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                                          <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" ng-model="radioValue">
+                                          <span class="mdl-radio__label">Third</span>
+                                      </label>
+                                  </div>
+                                  </div>
+                              </div>
+
+                              <button id="create-acc" class="sing-up-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" type="submit">Create account</button>
+                          </form>
+
+                      </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="more" role="tabpanel">
+                  <div class="vertical-spacer"></div>
+                  <div class="row">
+                      <div class="col-xs-10 col-xs-offset-1">
+                          <h3 class="roboto">More soon !</h3>
+                          <p>
+                              {{name + " " + email + ""}} <br>
+                              {{pass + " " + password_confirm + ""}}<br>
+                              {{about}}<br>
+                              {{radioValue}}
+                          </p>
+                      </div>
+                  </div>
                 </div>
             </div>
 
-            <!-- LINE SEPARATOR -->
-            <div class="line-container"><div class="line"></div></div>
+            <!-- MDL FOOTER -->
+            <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer__middle-section">
 
-            <!-- SING UP / SING IN  -  PANEL -->
-            <div class="information-log">
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">ABOUT</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
 
-                <!-- IMAGES -->
-                <div id="tools-image"     class="information-img-box"><img src="images/tools.svg"></img>
-                    <span class="information-img-descript coming-soon">
-                    Build</span></div>
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">HELP</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
 
-                <div id="flask-image"     class="information-img-box"><img src="images/flask.svg"></img>
-                    <span class="information-img-descript coming-soon">
-                    Test</span></div>
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">CONTACT US</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Google plus</a></li>
+                    </ul>
+                </div>
 
-                <div id="analytics-image" class="information-img-box"><img src="images/analytics.svg"></img>
-                    <span class="information-img-descript coming-soon">
-                    Deploy</span></div>
-
-                <!-- BUTTONS -->
-                <div class="information-buttons-wrapper">
-                    <!-- Entrar -->
-                    <button id="sing-in-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
-                    Sing in</button>
-                    <!-- Registrarse -->
-                    <button id="sing-up-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored information-button mdl-js-ripple-effect">
-                    Sign up</button>
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">OTHER</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="images/licenses/licenses.html">Image Licenses</a></li>
+                    </ul>
                 </div>
 
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <!-- SIGN UP -->
-        <section id="sing-up" class="main-section sing-up-section">
-
-            <form id="sing-up-form" class="hidden" onsubmit="return validateForm();" action="pagina2.html" method="GET">
-
-                <div class="sing-up-form-row">
-                    <!-- NAME -->
-                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input name="FullName" class="mdl-textfield__input color" type="text" id="name-text">
-                        <label class="mdl-textfield__label sing-up-textfield-label color" for="name-text">Full name</label>
-                        <span id="name-error" class="mdl-textfield__error">Invalid name (Ex. "Michael Joseph Jackson")</span>
-                    </div>
-
-                    <!-- EMAIL -->
-                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input name="Email" class="mdl-textfield__input color" type="text" id="email-text">
-                        <label class="mdl-textfield__label sing-up-textfield-label" for="email-text">Email</label>
-                        <span id="email-error" class="mdl-textfield__error">Invalid email!</span>
-                    </div>
-                </div>
-
-                <div class="sing-up-form-row">
-                    <!-- PASSWORD -->
-                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input name="Password" class="mdl-textfield__input color" type="password" id="pass-text">
-                        <label class="mdl-textfield__label sing-up-textfield-label" for="pass-text">Password</label>
-                        <span id="pass-error" class="mdl-textfield__error">Password must have between 6 and 18 characters!</span>
-                    </div>
-
-                    <!-- CONFIRM PASSWORD -->
-                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input color" type="password" id="confirm-pass-text">
-                        <label class="mdl-textfield__label sing-up-textfield-label" for="confirm-pass-text">Confirm password</label>
-                        <span id="confirm-pass-error" class="mdl-textfield__error">Password dont match!</span>
-                    </div>
-                </div>
-                <div class="sing-up-form-row">
-
-                    <div class="mdl-textfield sing-up-textfield mdl-js-textfield">
-                        <textarea name="About" class="mdl-textfield__input" type="text" rows= "3" id="more-text" ></textarea>
-                        <label class="mdl-textfield__label sing-up-textfield-label" for="more-text">Tell us about you ! ... </label>
-                    </div>
-
-                    <div class="sing-up-radio-wrapper">
-                        <div class="sing-up-radio-row">
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                                <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-                                <span class="mdl-radio__label">First</span>
-                            </label>
-                        </div>
-
-                        <div class="sing-up-radio-row">
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-                                <span class="mdl-radio__label">Second</span>
-                            </label>
-                        </div>
-
-                        <div class="sing-up-radio-row">
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                                <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
-                                <span class="mdl-radio__label">Third</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <button id="create-acc" class="sing-up-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect hidden" type="submit">Create account</button>
-            </form>
-
-            <!-- ALTERNATIVE IMAGE -->
-            <img id="sing-up-img" class="sing-up-img" src="images/illustration.svg" alt=""/>
-
-        </section>
-
-        <!-- MDL FOOTER -->
-        <footer class="mdl-mega-footer">
-        <div class="mdl-mega-footer__middle-section">
-
-            <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">ABOUT</h1>
-                <ul class="mdl-mega-footer__link-list">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-
-            <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">HELP</h1>
-                <ul class="mdl-mega-footer__link-list">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Getting Started</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">CONTACT US</h1>
-                <ul class="mdl-mega-footer__link-list">
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Google plus</a></li>
-                </ul>
-            </div>
-
-            <div class="mdl-mega-footer__drop-down-section">
-                <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-                <h1 class="mdl-mega-footer__heading">OTHER</h1>
-                <ul class="mdl-mega-footer__link-list">
-                    <li><a href="images/licenses/licenses.html">Image Licenses</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </footer>
+    <!-- SCRIPTS -->
+    <!-- MDL SCRIPTS -->
+    <script defer src="js/MDL/material.min.js"></script>
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ANGULARJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <!-- MY SCRIPTS -->
+    <script src="js/app.js"></script>
 
     </body>
 </html>

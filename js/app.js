@@ -1,17 +1,22 @@
 
+// ANGULAR
+var app = angular.module('synergic-app', []);
+app.controller('synergic-controller', function($scope) {
+    $scope.name="";
+    $scope.email= "";
+    $scope.pass="";
+    $scope.about="";
+    $scope.password_confirm="";
+    $scope.radioValue="1";
+});
+
+// JS
 window.onload = function ()
 {
     movePaperPlane();
 
-    setScroll(0);
-
     document.addEventListener("scroll", movePaperPlane);
     window.addEventListener("resize", movePaperPlane);
-
-    document.getElementById("sing-up-button").addEventListener("click", function () {
-        goToSingUp();
-        hiddeSingUpImage();
-    });
 
     var form = document.forms["sing-up-form"];
     for (var i=0; i<form.children.length; ++i)
@@ -37,48 +42,10 @@ function movePaperPlane()
     plane.style.transform = "translate("+x+"px,0)";
 }
 
-// Desplaza el scroll-y hasta la sección de registro
-function goToSingUp()
-{
-    var ERROR = 2;
-    var SPEED = 20;
-
-    movePaperPlane();
-
-    var top = document.getElementById("sing-up").getBoundingClientRect().top;
-    var inc = Math.abs(top)<SPEED ? top : SPEED*Math.abs(top)/top;
-
-    if (Math.abs(top)>ERROR && incrementScroll(inc)>ERROR)
-        setTimeout(goToSingUp, 10);
-}
-
 // Devuelve el valor del scroll-y actual
 function getScroll()
 {
     return document.documentElement.scrollTop || document.body.scrollTop || 0;
-}
-
-// Fija el valor del scroll-y actual
-function setScroll(value)
-{
-    document.documentElement.scrollTop = value;
-    document.body.scrollTop = value;
-}
-
-// Incrementa el scroll-y y devuelve cuanto ha sido incrementado
-function incrementScroll(value)
-{
-    var before = getScroll();
-    setScroll(before+value);
-    return Math.abs(before-getScroll());
-}
-
-// Esconde la imagen del registro
-function hiddeSingUpImage()
-{
-    document.getElementById("sing-up-img").classList.add("hidden");
-    document.getElementById("sing-up-form").classList.remove("hidden");
-    document.getElementById("create-acc").classList.remove("hidden");
 }
 
 // Valida el formulario
